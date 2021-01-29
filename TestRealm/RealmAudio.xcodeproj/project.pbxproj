@@ -1,0 +1,692 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B179D0E25C405C5004B5A9D /* AutorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B179D0D25C405C5004B5A9D /* AutorTableViewController.swift */; };
+		5B179D1325C40AE0004B5A9D /* AulbomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B179D1225C40AE0004B5A9D /* AulbomTableViewController.swift */; };
+		5B179D1825C41D49004B5A9D /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B179D1725C41D49004B5A9D /* SongTableViewController.swift */; };
+		5B2234C325BC59780012130D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2234C225BC59780012130D /* AppDelegate.swift */; };
+		5B2234C525BC59780012130D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2234C425BC59780012130D /* SceneDelegate.swift */; };
+		5B2234CA25BC59780012130D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2234C825BC59780012130D /* Main.storyboard */; };
+		5B2234CC25BC597B0012130D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2234CB25BC597B0012130D /* Assets.xcassets */; };
+		5B2234CF25BC597B0012130D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2234CD25BC597B0012130D /* LaunchScreen.storyboard */; };
+		5B2234DA25BC597B0012130D /* RealmAudioTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2234D925BC597B0012130D /* RealmAudioTests.swift */; };
+		5B2234E525BC597B0012130D /* RealmAudioUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2234E425BC597B0012130D /* RealmAudioUITests.swift */; };
+		5B2234F625BC6A6A0012130D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5B2234F525BC6A6A0012130D /* Podfile */; };
+		5B22350125BD9BED0012130D /* AuthorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B22350025BD9BED0012130D /* AuthorModel.swift */; };
+		5B22351B25BDB0FE0012130D /* AlbomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B22351A25BDB0FE0012130D /* AlbomModel.swift */; };
+		5B22352025BDB6FC0012130D /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B22351F25BDB6FC0012130D /* SongModel.swift */; };
+		A64B1A8CC9B4CEF8998CD80A /* Pods_RealmAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0081862F275EA7DB1DFD03EE /* Pods_RealmAudio.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B2234D625BC597B0012130D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B2234B725BC59770012130D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B2234BE25BC59770012130D;
+			remoteInfo = RealmAudio;
+		};
+		5B2234E125BC597B0012130D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B2234B725BC59770012130D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B2234BE25BC59770012130D;
+			remoteInfo = RealmAudio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0081862F275EA7DB1DFD03EE /* Pods_RealmAudio.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmAudio.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14443811E2A884F7F317BB35 /* Pods-RealmAudio.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmAudio.release.xcconfig"; path = "Target Support Files/Pods-RealmAudio/Pods-RealmAudio.release.xcconfig"; sourceTree = "<group>"; };
+		5B179D0D25C405C5004B5A9D /* AutorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorTableViewController.swift; sourceTree = "<group>"; };
+		5B179D1225C40AE0004B5A9D /* AulbomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AulbomTableViewController.swift; sourceTree = "<group>"; };
+		5B179D1725C41D49004B5A9D /* SongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewController.swift; sourceTree = "<group>"; };
+		5B2234BF25BC59780012130D /* RealmAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B2234C225BC59780012130D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5B2234C425BC59780012130D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5B2234C925BC59780012130D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B2234CB25BC597B0012130D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B2234CE25BC597B0012130D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5B2234D025BC597B0012130D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B2234D525BC597B0012130D /* RealmAudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealmAudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B2234D925BC597B0012130D /* RealmAudioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAudioTests.swift; sourceTree = "<group>"; };
+		5B2234DB25BC597B0012130D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B2234E025BC597B0012130D /* RealmAudioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealmAudioUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B2234E425BC597B0012130D /* RealmAudioUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAudioUITests.swift; sourceTree = "<group>"; };
+		5B2234E625BC597B0012130D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B2234F525BC6A6A0012130D /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5B22350025BD9BED0012130D /* AuthorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorModel.swift; sourceTree = "<group>"; };
+		5B22351A25BDB0FE0012130D /* AlbomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbomModel.swift; sourceTree = "<group>"; };
+		5B22351F25BDB6FC0012130D /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
+		7B85A6A45BE45920D45E2FB8 /* Pods-RealmAudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmAudio.debug.xcconfig"; path = "Target Support Files/Pods-RealmAudio/Pods-RealmAudio.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B2234BC25BC59770012130D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A64B1A8CC9B4CEF8998CD80A /* Pods_RealmAudio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2234D225BC597B0012130D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2234DD25BC597B0012130D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2233ADCD407EF3499FC24971 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0081862F275EA7DB1DFD03EE /* Pods_RealmAudio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B2234B625BC59770012130D = {
+			isa = PBXGroup;
+			children = (
+				5B2234F525BC6A6A0012130D /* Podfile */,
+				5B2234C125BC59780012130D /* RealmAudio */,
+				5B2234D825BC597B0012130D /* RealmAudioTests */,
+				5B2234E325BC597B0012130D /* RealmAudioUITests */,
+				5B2234C025BC59780012130D /* Products */,
+				88EE74A83B45BAE6BBB7D389 /* Pods */,
+				2233ADCD407EF3499FC24971 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5B2234C025BC59780012130D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B2234BF25BC59780012130D /* RealmAudio.app */,
+				5B2234D525BC597B0012130D /* RealmAudioTests.xctest */,
+				5B2234E025BC597B0012130D /* RealmAudioUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B2234C125BC59780012130D /* RealmAudio */ = {
+			isa = PBXGroup;
+			children = (
+				5B2234C225BC59780012130D /* AppDelegate.swift */,
+				5B2234C425BC59780012130D /* SceneDelegate.swift */,
+				5B22350025BD9BED0012130D /* AuthorModel.swift */,
+				5B22351A25BDB0FE0012130D /* AlbomModel.swift */,
+				5B179D0D25C405C5004B5A9D /* AutorTableViewController.swift */,
+				5B179D1225C40AE0004B5A9D /* AulbomTableViewController.swift */,
+				5B179D1725C41D49004B5A9D /* SongTableViewController.swift */,
+				5B22351F25BDB6FC0012130D /* SongModel.swift */,
+				5B2234C825BC59780012130D /* Main.storyboard */,
+				5B2234CB25BC597B0012130D /* Assets.xcassets */,
+				5B2234CD25BC597B0012130D /* LaunchScreen.storyboard */,
+				5B2234D025BC597B0012130D /* Info.plist */,
+			);
+			path = RealmAudio;
+			sourceTree = "<group>";
+		};
+		5B2234D825BC597B0012130D /* RealmAudioTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B2234D925BC597B0012130D /* RealmAudioTests.swift */,
+				5B2234DB25BC597B0012130D /* Info.plist */,
+			);
+			path = RealmAudioTests;
+			sourceTree = "<group>";
+		};
+		5B2234E325BC597B0012130D /* RealmAudioUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5B2234E425BC597B0012130D /* RealmAudioUITests.swift */,
+				5B2234E625BC597B0012130D /* Info.plist */,
+			);
+			path = RealmAudioUITests;
+			sourceTree = "<group>";
+		};
+		88EE74A83B45BAE6BBB7D389 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B85A6A45BE45920D45E2FB8 /* Pods-RealmAudio.debug.xcconfig */,
+				14443811E2A884F7F317BB35 /* Pods-RealmAudio.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B2234BE25BC59770012130D /* RealmAudio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B2234E925BC597B0012130D /* Build configuration list for PBXNativeTarget "RealmAudio" */;
+			buildPhases = (
+				F871EA93400FDC88ABA605DC /* [CP] Check Pods Manifest.lock */,
+				5B2234BB25BC59770012130D /* Sources */,
+				5B2234BC25BC59770012130D /* Frameworks */,
+				5B2234BD25BC59770012130D /* Resources */,
+				BDA327C636141A61EF6B4D4E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RealmAudio;
+			productName = RealmAudio;
+			productReference = 5B2234BF25BC59780012130D /* RealmAudio.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5B2234D425BC597B0012130D /* RealmAudioTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B2234EC25BC597B0012130D /* Build configuration list for PBXNativeTarget "RealmAudioTests" */;
+			buildPhases = (
+				5B2234D125BC597B0012130D /* Sources */,
+				5B2234D225BC597B0012130D /* Frameworks */,
+				5B2234D325BC597B0012130D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B2234D725BC597B0012130D /* PBXTargetDependency */,
+			);
+			name = RealmAudioTests;
+			productName = RealmAudioTests;
+			productReference = 5B2234D525BC597B0012130D /* RealmAudioTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5B2234DF25BC597B0012130D /* RealmAudioUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B2234EF25BC597B0012130D /* Build configuration list for PBXNativeTarget "RealmAudioUITests" */;
+			buildPhases = (
+				5B2234DC25BC597B0012130D /* Sources */,
+				5B2234DD25BC597B0012130D /* Frameworks */,
+				5B2234DE25BC597B0012130D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B2234E225BC597B0012130D /* PBXTargetDependency */,
+			);
+			name = RealmAudioUITests;
+			productName = RealmAudioUITests;
+			productReference = 5B2234E025BC597B0012130D /* RealmAudioUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B2234B725BC59770012130D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					5B2234BE25BC59770012130D = {
+						CreatedOnToolsVersion = 12.3;
+					};
+					5B2234D425BC597B0012130D = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 5B2234BE25BC59770012130D;
+					};
+					5B2234DF25BC597B0012130D = {
+						CreatedOnToolsVersion = 12.3;
+						TestTargetID = 5B2234BE25BC59770012130D;
+					};
+				};
+			};
+			buildConfigurationList = 5B2234BA25BC59770012130D /* Build configuration list for PBXProject "RealmAudio" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5B2234B625BC59770012130D;
+			productRefGroup = 5B2234C025BC59780012130D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B2234BE25BC59770012130D /* RealmAudio */,
+				5B2234D425BC597B0012130D /* RealmAudioTests */,
+				5B2234DF25BC597B0012130D /* RealmAudioUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B2234BD25BC59770012130D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2234CF25BC597B0012130D /* LaunchScreen.storyboard in Resources */,
+				5B2234CC25BC597B0012130D /* Assets.xcassets in Resources */,
+				5B2234F625BC6A6A0012130D /* Podfile in Resources */,
+				5B2234CA25BC59780012130D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2234D325BC597B0012130D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2234DE25BC597B0012130D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BDA327C636141A61EF6B4D4E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RealmAudio/Pods-RealmAudio-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RealmAudio/Pods-RealmAudio-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RealmAudio/Pods-RealmAudio-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F871EA93400FDC88ABA605DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RealmAudio-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B2234BB25BC59770012130D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B22352025BDB6FC0012130D /* SongModel.swift in Sources */,
+				5B179D1825C41D49004B5A9D /* SongTableViewController.swift in Sources */,
+				5B179D1325C40AE0004B5A9D /* AulbomTableViewController.swift in Sources */,
+				5B22350125BD9BED0012130D /* AuthorModel.swift in Sources */,
+				5B22351B25BDB0FE0012130D /* AlbomModel.swift in Sources */,
+				5B179D0E25C405C5004B5A9D /* AutorTableViewController.swift in Sources */,
+				5B2234C325BC59780012130D /* AppDelegate.swift in Sources */,
+				5B2234C525BC59780012130D /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2234D125BC597B0012130D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2234DA25BC597B0012130D /* RealmAudioTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2234DC25BC597B0012130D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B2234E525BC597B0012130D /* RealmAudioUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B2234D725BC597B0012130D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B2234BE25BC59770012130D /* RealmAudio */;
+			targetProxy = 5B2234D625BC597B0012130D /* PBXContainerItemProxy */;
+		};
+		5B2234E225BC597B0012130D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B2234BE25BC59770012130D /* RealmAudio */;
+			targetProxy = 5B2234E125BC597B0012130D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5B2234C825BC59780012130D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B2234C925BC59780012130D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5B2234CD25BC597B0012130D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B2234CE25BC597B0012130D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B2234E725BC597B0012130D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5B2234E825BC597B0012130D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5B2234EA25BC597B0012130D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B85A6A45BE45920D45E2FB8 /* Pods-RealmAudio.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5257ZRX3P4;
+				INFOPLIST_FILE = RealmAudio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YuriyDubrovin.RealmAudio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B2234EB25BC597B0012130D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14443811E2A884F7F317BB35 /* Pods-RealmAudio.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5257ZRX3P4;
+				INFOPLIST_FILE = RealmAudio/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YuriyDubrovin.RealmAudio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5B2234ED25BC597B0012130D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5257ZRX3P4;
+				INFOPLIST_FILE = RealmAudioTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YuriyDubrovin.RealmAudioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RealmAudio.app/RealmAudio";
+			};
+			name = Debug;
+		};
+		5B2234EE25BC597B0012130D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5257ZRX3P4;
+				INFOPLIST_FILE = RealmAudioTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YuriyDubrovin.RealmAudioTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RealmAudio.app/RealmAudio";
+			};
+			name = Release;
+		};
+		5B2234F025BC597B0012130D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5257ZRX3P4;
+				INFOPLIST_FILE = RealmAudioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YuriyDubrovin.RealmAudioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RealmAudio;
+			};
+			name = Debug;
+		};
+		5B2234F125BC597B0012130D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5257ZRX3P4;
+				INFOPLIST_FILE = RealmAudioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YuriyDubrovin.RealmAudioUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RealmAudio;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B2234BA25BC59770012130D /* Build configuration list for PBXProject "RealmAudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B2234E725BC597B0012130D /* Debug */,
+				5B2234E825BC597B0012130D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B2234E925BC597B0012130D /* Build configuration list for PBXNativeTarget "RealmAudio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B2234EA25BC597B0012130D /* Debug */,
+				5B2234EB25BC597B0012130D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B2234EC25BC597B0012130D /* Build configuration list for PBXNativeTarget "RealmAudioTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B2234ED25BC597B0012130D /* Debug */,
+				5B2234EE25BC597B0012130D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B2234EF25BC597B0012130D /* Build configuration list for PBXNativeTarget "RealmAudioUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B2234F025BC597B0012130D /* Debug */,
+				5B2234F125BC597B0012130D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B2234B725BC59770012130D /* Project object */;
+}
