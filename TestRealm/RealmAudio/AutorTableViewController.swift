@@ -15,7 +15,22 @@ class AutorTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(Realm.Configuration.defaultConfiguration.fileURL!)
-        //createDataBase()
+        let DB = DBManagerRealm()
+         //let buf = realm.objects(Song.self).last
+        ///print(buf?.id)
+        
+//        try! realm.write{
+//            realm.deleteAll()
+//        }
+       // createDataBase()
+//        let buf = DB.getAulbomSong(id: 6)
+//        let song = realm.objects(Song.self).filter("id == 7")
+//        if song[0].albom.count == 0{
+//            print("es")
+//        }
+//        print(buf!.name)
+        //DB.deleteAuthor(id: 0)
+        //DB.getSong()
     }
 
     // MARK: - Table view data source
@@ -86,29 +101,18 @@ class AutorTableViewController: UITableViewController {
         song1_4.name = "1.2.4"
 
 //
-
-        try! realm.write{
-            realm.add(author)
-            realm.add(albom)
-            realm.add(albom1)
-            author.alboms.append(albom)
-            author.alboms.append(albom1)
-            realm.add(song)
-            realm.add(song1)
-            realm.add(song2)
-            realm.add(song3)
-            author.alboms.first?.songs.append(song)
-            author.alboms.first?.songs.append(song1)
-            author.alboms.first?.songs.append(song2)
-            author.alboms.first?.songs.append(song3)
-            realm.add(song1_1)
-            realm.add(song1_2)
-            realm.add(song1_3)
-            realm.add(song1_4)
-            author.alboms.last?.songs.append(song1_1)
-            author.alboms.last?.songs.append(song1_2)
-            author.alboms.last?.songs.append(song1_3)
-            author.alboms.last?.songs.append(song1_4)
-        }
+        let DB = DBManagerRealm()
+        DB.addAuthor(author: author)
+        DB.addAlbum(album: albom, author: author)
+        DB.addAlbum(album: albom1, author: author)
+        DB.addSong(author: author, album: albom, song: song)
+        DB.addSong(author: author, album: albom, song: song1)
+        DB.addSong(author: author, album: albom, song: song2)
+        DB.addSong(author: author, album: albom, song: song3)
+        DB.addSong(author: author, album: albom1, song: song1_1)
+        DB.addSong(author: author, album: albom1, song: song1_2)
+        DB.addSong(author: author, album: albom1, song: song1_3)
+        DB.addSong(author: author, album: albom1, song: song1_4)
+        
     }
 }

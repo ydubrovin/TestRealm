@@ -12,6 +12,7 @@ class Autor: Object{
     @objc dynamic var id = 0
     @objc dynamic var name = ""
     let alboms = List<Albom>()
+    let songs = List<Song>()
     
     override static func primaryKey() -> String? {
         return "id"

@@ -10,7 +10,8 @@ import RealmSwift
 class Song: Object{
     @objc dynamic var id = 0
     @objc dynamic var name = ""
-    let owners = LinkingObjects(fromType: Albom.self, property:"songs")
+    let albom = LinkingObjects(fromType: Albom.self, property:"songs")
+    let author = LinkingObjects(fromType: Autor.self, property: "songs")
     
     override static func primaryKey() -> String? {
         return "id"

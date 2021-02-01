@@ -10,8 +10,10 @@
 		5B179D0E25C405C5004B5A9D /* AutorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B179D0D25C405C5004B5A9D /* AutorTableViewController.swift */; };
 		5B179D1325C40AE0004B5A9D /* AulbomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B179D1225C40AE0004B5A9D /* AulbomTableViewController.swift */; };
 		5B179D1825C41D49004B5A9D /* SongTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B179D1725C41D49004B5A9D /* SongTableViewController.swift */; };
+		5B179D2625C6AB1E004B5A9D /* DBManagerRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B179D2525C6AB1E004B5A9D /* DBManagerRealm.swift */; };
 		5B2234C325BC59780012130D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2234C225BC59780012130D /* AppDelegate.swift */; };
 		5B2234C525BC59780012130D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2234C425BC59780012130D /* SceneDelegate.swift */; };
+		5B2234C725BC59780012130D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B2234C625BC59780012130D /* ViewController.swift */; };
 		5B2234CA25BC59780012130D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2234C825BC59780012130D /* Main.storyboard */; };
 		5B2234CC25BC597B0012130D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B2234CB25BC597B0012130D /* Assets.xcassets */; };
 		5B2234CF25BC597B0012130D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B2234CD25BC597B0012130D /* LaunchScreen.storyboard */; };
@@ -21,6 +23,7 @@
 		5B22350125BD9BED0012130D /* AuthorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B22350025BD9BED0012130D /* AuthorModel.swift */; };
 		5B22351B25BDB0FE0012130D /* AlbomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B22351A25BDB0FE0012130D /* AlbomModel.swift */; };
 		5B22352025BDB6FC0012130D /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B22351F25BDB6FC0012130D /* SongModel.swift */; };
+		5BF782B525C7EE5C00944F1E /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF782B425C7EE5B00944F1E /* JSON.swift */; };
 		A64B1A8CC9B4CEF8998CD80A /* Pods_RealmAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0081862F275EA7DB1DFD03EE /* Pods_RealmAudio.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,9 +50,11 @@
 		5B179D0D25C405C5004B5A9D /* AutorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutorTableViewController.swift; sourceTree = "<group>"; };
 		5B179D1225C40AE0004B5A9D /* AulbomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AulbomTableViewController.swift; sourceTree = "<group>"; };
 		5B179D1725C41D49004B5A9D /* SongTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableViewController.swift; sourceTree = "<group>"; };
+		5B179D2525C6AB1E004B5A9D /* DBManagerRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManagerRealm.swift; sourceTree = "<group>"; };
 		5B2234BF25BC59780012130D /* RealmAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealmAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2234C225BC59780012130D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B2234C425BC59780012130D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5B2234C625BC59780012130D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5B2234C925BC59780012130D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B2234CB25BC597B0012130D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B2234CE25BC597B0012130D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,6 +69,7 @@
 		5B22350025BD9BED0012130D /* AuthorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorModel.swift; sourceTree = "<group>"; };
 		5B22351A25BDB0FE0012130D /* AlbomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbomModel.swift; sourceTree = "<group>"; };
 		5B22351F25BDB6FC0012130D /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
+		5BF782B425C7EE5B00944F1E /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		7B85A6A45BE45920D45E2FB8 /* Pods-RealmAudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmAudio.debug.xcconfig"; path = "Target Support Files/Pods-RealmAudio/Pods-RealmAudio.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,12 +135,13 @@
 			children = (
 				5B2234C225BC59780012130D /* AppDelegate.swift */,
 				5B2234C425BC59780012130D /* SceneDelegate.swift */,
-				5B22350025BD9BED0012130D /* AuthorModel.swift */,
-				5B22351A25BDB0FE0012130D /* AlbomModel.swift */,
+				5B2234C625BC59780012130D /* ViewController.swift */,
 				5B179D0D25C405C5004B5A9D /* AutorTableViewController.swift */,
+				5B179D2525C6AB1E004B5A9D /* DBManagerRealm.swift */,
+				5BF782B425C7EE5B00944F1E /* JSON.swift */,
 				5B179D1225C40AE0004B5A9D /* AulbomTableViewController.swift */,
 				5B179D1725C41D49004B5A9D /* SongTableViewController.swift */,
-				5B22351F25BDB6FC0012130D /* SongModel.swift */,
+				5BF782B025C6F5BC00944F1E /* RealmObject */,
 				5B2234C825BC59780012130D /* Main.storyboard */,
 				5B2234CB25BC597B0012130D /* Assets.xcassets */,
 				5B2234CD25BC597B0012130D /* LaunchScreen.storyboard */,
@@ -159,6 +166,16 @@
 				5B2234E625BC597B0012130D /* Info.plist */,
 			);
 			path = RealmAudioUITests;
+			sourceTree = "<group>";
+		};
+		5BF782B025C6F5BC00944F1E /* RealmObject */ = {
+			isa = PBXGroup;
+			children = (
+				5B22350025BD9BED0012130D /* AuthorModel.swift */,
+				5B22351A25BDB0FE0012130D /* AlbomModel.swift */,
+				5B22351F25BDB6FC0012130D /* SongModel.swift */,
+			);
+			name = RealmObject;
 			sourceTree = "<group>";
 		};
 		88EE74A83B45BAE6BBB7D389 /* Pods */ = {
@@ -346,9 +363,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B22352025BDB6FC0012130D /* SongModel.swift in Sources */,
+				5BF782B525C7EE5C00944F1E /* JSON.swift in Sources */,
 				5B179D1825C41D49004B5A9D /* SongTableViewController.swift in Sources */,
 				5B179D1325C40AE0004B5A9D /* AulbomTableViewController.swift in Sources */,
+				5B179D2625C6AB1E004B5A9D /* DBManagerRealm.swift in Sources */,
 				5B22350125BD9BED0012130D /* AuthorModel.swift in Sources */,
+				5B2234C725BC59780012130D /* ViewController.swift in Sources */,
 				5B22351B25BDB0FE0012130D /* AlbomModel.swift in Sources */,
 				5B179D0E25C405C5004B5A9D /* AutorTableViewController.swift in Sources */,
 				5B2234C325BC59780012130D /* AppDelegate.swift in Sources */,
