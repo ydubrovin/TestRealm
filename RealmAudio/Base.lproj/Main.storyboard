@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YvX-M9-YRU">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="gLY-Dh-ZEW">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AutorCell" id="gLY-Dh-ZEW">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gLY-Dh-ZEW" id="CqQ-D2-olq">
@@ -48,7 +48,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="wm2-B9-qvH"/>
                     <connections>
-                        <segue destination="wFE-YC-bwV" kind="show" identifier="one" id="EdZ-j4-R6u"/>
+                        <segue destination="wFE-YC-bwV" kind="show" identifier="moveToAlbumViewController" id="EdZ-j4-R6u"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5O-lr-my6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -64,7 +64,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell1" id="Rnb-AC-F4e">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AulbomCell" id="Rnb-AC-F4e">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Rnb-AC-F4e" id="RGB-dA-8gX">
@@ -80,7 +80,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="d5g-Pc-Y9f"/>
                     <connections>
-                        <segue destination="DOx-fp-c6E" kind="show" identifier="two" id="St6-Ef-kMR"/>
+                        <segue destination="DOx-fp-c6E" kind="show" identifier="moveToSongViewController" id="Bsj-Ae-ChJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09l-QU-57S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -96,7 +96,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell2" id="xhD-Uf-e90">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongCell" id="xhD-Uf-e90">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xhD-Uf-e90" id="Yy8-NT-BO8">
@@ -111,21 +111,21 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="fLz-46-BbW">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="edf-Mh-MbK">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="dUd-2s-BbG">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="lbq-yF-Pvm">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="oag-ep-cfG">
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Добавить"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="addSong:" destination="DOx-fp-c6E" eventType="touchUpInside" id="vkC-nY-pqN"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <action selector="addSong:" destination="DOx-fp-c6E" id="b2i-xl-9Ia"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSy-V0-LnY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3636" y="65"/>
+            <point key="canvasLocation" x="3799" y="72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4zh-vZ-icG">
