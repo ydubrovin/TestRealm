@@ -36,7 +36,6 @@ class AulbomTableViewController: UITableViewController {
 
         let buf = realm.objects(Autor.self).filter("id == \(self.Autorid)")
         cell.textLabel?.text = buf[0].alboms[indexPath.row].name
-        let buf1 = dataBaseManager.get
         return cell
     }
     

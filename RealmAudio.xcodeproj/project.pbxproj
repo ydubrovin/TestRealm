@@ -24,6 +24,12 @@
 		5B22351B25BDB0FE0012130D /* AlbomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B22351A25BDB0FE0012130D /* AlbomModel.swift */; };
 		5B22352025BDB6FC0012130D /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B22351F25BDB6FC0012130D /* SongModel.swift */; };
 		5BF782B525C7EE5C00944F1E /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF782B425C7EE5B00944F1E /* JSON.swift */; };
+		5BF782D225CC2DD100944F1E /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF782D125CC2DD100944F1E /* RealmDBManager.swift */; };
+		5BF782D725CC2E0700944F1E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF782D625CC2E0700944F1E /* Constants.swift */; };
+		5BF782DC25CC9EB400944F1E /* PlayListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF782DB25CC9EB400944F1E /* PlayListModel.swift */; };
+		5BF782E125CCA1DB00944F1E /* PlayListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF782E025CCA1DB00944F1E /* PlayListsViewController.swift */; };
+		5BF782E625CCA20D00944F1E /* CreatePlayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF782E525CCA20D00944F1E /* CreatePlayListViewController.swift */; };
+		5BF782EB25CCA21C00944F1E /* SelectSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF782EA25CCA21C00944F1E /* SelectSongViewController.swift */; };
 		A64B1A8CC9B4CEF8998CD80A /* Pods_RealmAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0081862F275EA7DB1DFD03EE /* Pods_RealmAudio.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +76,12 @@
 		5B22351A25BDB0FE0012130D /* AlbomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbomModel.swift; sourceTree = "<group>"; };
 		5B22351F25BDB6FC0012130D /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
 		5BF782B425C7EE5B00944F1E /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		5BF782D125CC2DD100944F1E /* RealmDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmDBManager.swift; path = ../../../../Downloads/RealmDBManager.swift; sourceTree = "<group>"; };
+		5BF782D625CC2E0700944F1E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5BF782DB25CC9EB400944F1E /* PlayListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListModel.swift; sourceTree = "<group>"; };
+		5BF782E025CCA1DB00944F1E /* PlayListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayListsViewController.swift; sourceTree = "<group>"; };
+		5BF782E525CCA20D00944F1E /* CreatePlayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayListViewController.swift; sourceTree = "<group>"; };
+		5BF782EA25CCA21C00944F1E /* SelectSongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSongViewController.swift; sourceTree = "<group>"; };
 		7B85A6A45BE45920D45E2FB8 /* Pods-RealmAudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmAudio.debug.xcconfig"; path = "Target Support Files/Pods-RealmAudio/Pods-RealmAudio.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +145,7 @@
 		5B2234C125BC59780012130D /* RealmAudio */ = {
 			isa = PBXGroup;
 			children = (
+				5BF782D125CC2DD100944F1E /* RealmDBManager.swift */,
 				5B2234C225BC59780012130D /* AppDelegate.swift */,
 				5B2234C425BC59780012130D /* SceneDelegate.swift */,
 				5B2234C625BC59780012130D /* ViewController.swift */,
@@ -141,11 +154,15 @@
 				5BF782B425C7EE5B00944F1E /* JSON.swift */,
 				5B179D1225C40AE0004B5A9D /* AulbomTableViewController.swift */,
 				5B179D1725C41D49004B5A9D /* SongTableViewController.swift */,
+				5BF782E025CCA1DB00944F1E /* PlayListsViewController.swift */,
+				5BF782E525CCA20D00944F1E /* CreatePlayListViewController.swift */,
+				5BF782EA25CCA21C00944F1E /* SelectSongViewController.swift */,
 				5BF782B025C6F5BC00944F1E /* RealmObject */,
 				5B2234C825BC59780012130D /* Main.storyboard */,
 				5B2234CB25BC597B0012130D /* Assets.xcassets */,
 				5B2234CD25BC597B0012130D /* LaunchScreen.storyboard */,
 				5B2234D025BC597B0012130D /* Info.plist */,
+				5BF782D625CC2E0700944F1E /* Constants.swift */,
 			);
 			path = RealmAudio;
 			sourceTree = "<group>";
@@ -174,6 +191,7 @@
 				5B22350025BD9BED0012130D /* AuthorModel.swift */,
 				5B22351A25BDB0FE0012130D /* AlbomModel.swift */,
 				5B22351F25BDB6FC0012130D /* SongModel.swift */,
+				5BF782DB25CC9EB400944F1E /* PlayListModel.swift */,
 			);
 			name = RealmObject;
 			sourceTree = "<group>";
@@ -367,11 +385,17 @@
 				5B179D1825C41D49004B5A9D /* SongTableViewController.swift in Sources */,
 				5B179D1325C40AE0004B5A9D /* AulbomTableViewController.swift in Sources */,
 				5B179D2625C6AB1E004B5A9D /* DBManagerRealm.swift in Sources */,
+				5BF782E125CCA1DB00944F1E /* PlayListsViewController.swift in Sources */,
 				5B22350125BD9BED0012130D /* AuthorModel.swift in Sources */,
 				5B2234C725BC59780012130D /* ViewController.swift in Sources */,
+				5BF782DC25CC9EB400944F1E /* PlayListModel.swift in Sources */,
+				5BF782D725CC2E0700944F1E /* Constants.swift in Sources */,
+				5BF782E625CCA20D00944F1E /* CreatePlayListViewController.swift in Sources */,
 				5B22351B25BDB0FE0012130D /* AlbomModel.swift in Sources */,
 				5B179D0E25C405C5004B5A9D /* AutorTableViewController.swift in Sources */,
+				5BF782D225CC2DD100944F1E /* RealmDBManager.swift in Sources */,
 				5B2234C325BC59780012130D /* AppDelegate.swift in Sources */,
+				5BF782EB25CCA21C00944F1E /* SelectSongViewController.swift in Sources */,
 				5B2234C525BC59780012130D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

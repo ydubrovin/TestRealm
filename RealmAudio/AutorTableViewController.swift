@@ -14,6 +14,7 @@ class AutorTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //self.dataBaseManager = DBManagerRealm()
         //DB.createDataBase()
          //let buf = realm.objects(Song.self).last
@@ -38,14 +39,14 @@ class AutorTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataBaseManager.getContAuthor()
+        return 0 //dataBaseManager.getContAuthor()
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AutorCell", for: indexPath)
-        let author = self.dataBaseManager.getAuthorSong(id: indexPath.row)
-        cell.textLabel?.text = author.name
+        //let author = self.dataBaseManager.getAuthorSong(id: indexPath.row)
+        cell.textLabel?.text = ""//author.name
          
 
         return cell
