@@ -20,6 +20,7 @@ class DBManagerRealm: NSObject{
 //            print("error")
 //        }
         self.fileExists()
+        //self.parsing()
         
         
     }
@@ -31,7 +32,8 @@ class DBManagerRealm: NSObject{
             print("file exists")
             print(path)
         }else{
-            self.createDataBase()
+            //self.createDataBase()
+            self.parsing()
             print("create database")
         }
 //        do{
@@ -50,16 +52,13 @@ class DBManagerRealm: NSObject{
         } catch let error as NSError {
             print(error)
         }
-        
-        
-      
-        //self.realm.deleteAll()
     }
 
-    func addAuthor(author: Autor){
+    func addAuthor(author: Author){
         
         do{
             let realm = try Realm()
+            print(Realm.Configuration.defaultConfiguration.fileURL!)
             try realm.write{
                 realm.add(author)
             }
@@ -68,7 +67,7 @@ class DBManagerRealm: NSObject{
         }
     }
 
-    func addAlbum(album: Albom, author: Autor){
+    func addAlbum(album: Album, author: Author){
      
         do{
             let realm = try Realm()
@@ -81,7 +80,7 @@ class DBManagerRealm: NSObject{
         }
     }
 
-    func addSong(author: Autor, album: Albom?,song:Song ){
+    func addSong(author: Author, album: Album?,song:Song ){
 
         do{
             let realm = try Realm()
@@ -100,7 +99,7 @@ class DBManagerRealm: NSObject{
     func deleteAuthor(id: Int){
         do {
             let realm = try Realm()
-        let deleteAuthor = realm.objects(Autor.self).filter("id == \(id)")
+        let deleteAuthor = realm.objects(Author.self).filter("id == \(id)")
         do {
             try realm.write{
                 for deleteSong in deleteAuthor[0].songs{
@@ -138,7 +137,7 @@ class DBManagerRealm: NSObject{
     func deleteAlbum(id: Int){
         do{
             let realm = try Realm()
-        let deleteAlbum = realm.objects(Albom.self).filter("id == \(id)")
+        let deleteAlbum = realm.objects(Album.self).filter("id == \(id)")
         do{
             try realm.write{
                 for song in deleteAlbum[0].songs{
@@ -157,7 +156,7 @@ class DBManagerRealm: NSObject{
     func getSongAuthor(id: Int)-> List<Song>{
         do{
             let realm = try Realm()
-        let author = realm.objects(Autor.self).filter("id == \(id)")
+        let author = realm.objects(Author.self).filter("id == \(id)")
         let songs = author[0].songs
         return songs
         }catch{
@@ -169,7 +168,7 @@ class DBManagerRealm: NSObject{
     func getSongAlbum(id:Int)-> List<Song>{
         do{
             let realm = try Realm()
-        let album = realm.objects(Albom.self).filter("id == \(id)")
+        let album = realm.objects(Album.self).filter("id == \(id)")
         let songs = album[0].songs
         return songs
         }catch{
@@ -178,7 +177,7 @@ class DBManagerRealm: NSObject{
         return List<Song>()
     }
 
-    func getAuthorSong(id:Int)->Autor{
+    func getAuthorSong(id:Int)->Author{
         do{
             let realm = try Realm()
         let song = realm.objects(Song.self).filter("id == \(id)")
@@ -188,10 +187,10 @@ class DBManagerRealm: NSObject{
         }catch{
             
         }
-        return Autor()
+        return Author()
     }
 
-    func getAulbomSong(id:Int)->Albom?{
+    func getAulbomSong(id:Int)->Album?{
         do{
             let realm = try Realm()
         let song = realm.objects(Song.self).filter("id == \(id)")
@@ -206,16 +205,165 @@ class DBManagerRealm: NSObject{
         }
         return nil
     }
+    func getSong(id: Int)->Song{
+        do{
+            let realm = try Realm()
+            let song = realm.objects(Song.self).filter("id == \(id)")
+            return song[0]
+        }catch{
+            
+        }
+        return Song()
+    }
 
+
+    func getContAuthor()-> Int{
+        do{
+            let realm = try Realm()
+        return realm.objects(Author.self).count
+        }catch{
+            
+        }
+        return 0
+    }
+
+    func getContAulbom()-> Int{
+        do{
+            let realm = try Realm()
+        return realm.objects(Album.self).count
+        }catch{
+            
+        }
+        return 0
+    }
+
+    func getContSong()-> Int{
+        do{
+            let realm = try Realm()
+        return realm.objects(Song.self).count
+        }catch{
+            
+        }
+        return 0
+    }
+    
+    func addPlayList(playList: PlayListModel){
+        do {
+            let realm = try Realm()
+            print(realm.objects(PlayListModel.self).last?.id)
+            var lastid = realm.objects(PlayListModel.self).last?.id
+            if lastid == nil{
+                lastid = 0
+            }else{
+                lastid = lastid! + 1
+            }
+            playList.id  = lastid!
+            try realm.write{
+                realm.add(playList)
+            }
+        } catch let error as NSError {
+            print(error)
+        }
+    }
+    
+    func deletePlayList(id: Int){
+        do {
+            let realm = try Realm()
+            let deletePlayList = realm.objects(PlayListModel.self).filter("id == \(id)")
+            try realm.write{
+                realm.delete(deletePlayList)
+            }
+        } catch let error as NSError  {
+            print(error)
+        }
+    }
+    
+    func getPlayList(id: Int)->PlayListModel{
+        do {
+            let realm = try Realm()
+            let playList = realm.objects(PlayListModel.self).filter("id == \(id)")
+            return playList[0]
+        } catch let error as NSError {
+            print(error)
+        }
+        return PlayListModel()
+    }
+    func getCountPlayList()->Int{
+        do{
+            let realm = try Realm()
+            return realm.objects(PlayListModel.self).count
+        }catch{
+            
+        }
+        return 0
+    }
+    func getLastIdPlayList()-> Int{
+        do {
+            let realm = try Realm()
+            let lastId = realm.objects(PlayListModel.self).last?.id
+            return lastId!
+        } catch let error as NSError {
+            print(error)
+        }
+        return 0
+    }
+    
+    func addPlayListSongs(idPlayList:Int, songs:[Song]){
+        do {
+            let realm = try Realm()
+            let playList = realm.objects(PlayListModel.self).filter("id == \(idPlayList)")
+            //let song1 = realm.objects(Song.self).filter("id == 1")
+            for song in songs{
+                try realm.write{
+                    playList[0].songs.append(song)
+                }
+            }
+        } catch let error as NSError {
+            print("error")
+        }
+    }
+    
+    func parsing(){
+        let statbuf: Stat
+        let json = MyJson()
+        let inputData = json.json2.data(using: .utf8)!
+        let decoder = JSONDecoder()
+        statbuf = try! decoder.decode(Stat.self, from: inputData)
+        print(statbuf.author)
+        for author in statbuf.author{
+            let authorbuf = Author()
+            authorbuf.id = author.id
+            authorbuf.name = author.name
+            self.addAuthor(author: authorbuf)
+            for song in author.song!{
+                let songbuf = Song()
+                songbuf.id = song.id
+                songbuf.name = song.name
+                self.addSong(author: authorbuf, album: nil, song: songbuf)
+            }
+            for aulbum in author.album!{
+                let aulbumbuf = Album()
+                aulbumbuf.id = aulbum.id
+                aulbumbuf.name = aulbum.name
+                self.addAlbum(album: aulbumbuf, author: authorbuf)
+                for song in aulbum.song!{
+                    let songbuf = Song()
+                    songbuf.id = song.id
+                    songbuf.name = song.name
+                    self.addSong(author: authorbuf, album: aulbumbuf, song: songbuf)
+                }
+            }
+        }
+    }
     func createDataBase(){
-        let author = Autor()
+        let author = Author()
         author.name = "1"
         author.id = 0
-        let albom = Albom()
+        let albom = Album()
         albom.dateRealise = Date(timeIntervalSince1970: Date().timeIntervalSinceReferenceDate)
         albom.name = "1.1"
         albom.id = 0
-        let albom1 = Albom()
+        let albom1 = Album()
         albom1.dateRealise = Date(timeIntervalSince1970: Date().timeIntervalSinceReferenceDate)
         albom1.name = "1.2"
         albom1.id = 1
@@ -259,37 +407,6 @@ class DBManagerRealm: NSObject{
         addSong(author: author, album: albom1, song: song1_4)
 
     }
-
-    func getContAuthor()-> Int{
-        do{
-            let realm = try Realm()
-        return realm.objects(Autor.self).count
-        }catch{
-            
-        }
-        return 0
-    }
-
-    func getContAulbom()-> Int{
-        do{
-            let realm = try Realm()
-        return realm.objects(Albom.self).count
-        }catch{
-            
-        }
-        return 0
-    }
-
-    func getContSong()-> Int{
-        do{
-            let realm = try Realm()
-        return realm.objects(Song.self).count
-        }catch{
-            
-        }
-        return 0
-    }
-
     
 //    func deleteAll(){
 //        guard let realm = self.realm else {
@@ -299,7 +416,7 @@ class DBManagerRealm: NSObject{
 //        //self.realm.deleteAll()
 //    }
 //
-//    func addAuthor(author: Autor){
+//    func addAuthor(author: Author){
 //        guard let realm = self.realm else {
 //            return
 //        }
@@ -312,7 +429,7 @@ class DBManagerRealm: NSObject{
 //        }
 //    }
 //
-//    func addAlbum(album: Albom, author: Autor){
+//    func addAlbum(album: Albom, author: Author){
 //        guard let realm = self.realm else {
 //            return
 //        }
@@ -326,7 +443,7 @@ class DBManagerRealm: NSObject{
 //        }
 //    }
 //
-//    func addSong(author: Autor, album: Albom?,song:Song ){
+//    func addSong(author: Author, album: Albom?,song:Song ){
 //        guard let realm = self.realm else {
 //            return
 //        }
@@ -347,7 +464,7 @@ class DBManagerRealm: NSObject{
 //        guard let realm = self.realm else {
 //            return
 //        }
-//        let deleteAuthor = realm.objects(Autor.self).filter("id == \(id)")
+//        let deleteAuthor = realm.objects(Author.self).filter("id == \(id)")
 //        do {
 //            try realm.write{
 //                for deleteSong in deleteAuthor[0].songs{
@@ -398,7 +515,7 @@ class DBManagerRealm: NSObject{
 //        guard let realm = self.realm else {
 //            return List<Song>()
 //        }
-//        let author = realm.objects(Autor.self).filter("id == \(id)")
+//        let author = realm.objects(Author.self).filter("id == \(id)")
 //        let songs = author[0].songs
 //        return songs
 //    }
@@ -412,9 +529,9 @@ class DBManagerRealm: NSObject{
 //        return songs
 //    }
 //
-//    func getAuthorSong(id:Int)->Autor{
+//    func getAuthorSong(id:Int)->Author{
 //        guard let realm = self.realm else {
-//            return Autor()
+//            return Author()
 //        }
 //        let song = realm.objects(Song.self).filter("id == \(id)")
 //        let author = song[0].author[0]
@@ -436,7 +553,7 @@ class DBManagerRealm: NSObject{
 //    }
 //
 //    func createDataBase(){
-//        let author = Autor()
+//        let author = Author()
 //        author.name = "1"
 //        author.id = 0
 //        let albom = Albom()
@@ -492,7 +609,7 @@ class DBManagerRealm: NSObject{
 //        guard let realm = self.realm else {
 //            return 0
 //        }
-//        return realm.objects(Autor.self).count
+//        return realm.objects(Author.self).count
 //    }
 //
 //    func getContAulbom()-> Int{

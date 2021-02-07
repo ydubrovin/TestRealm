@@ -1,23 +1,15 @@
 //
-//  User.swift
+//  AuthorModel.swift
 //  RealmAudio
 //
-//  Created by Юрий Дубровин on 24.01.2021.
+//  Created by Юрий Дубровин on 08.02.2021.
 //
 
 import Foundation
-import RealmSwift
 
-class Autor: Object{
-    @objc dynamic var id = 0
-    @objc dynamic var name = ""
-    let alboms = List<Albom>()
-    let songs = List<Song>()
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-    override static func indexedProperties() -> [String] {
-        return ["id"]
-    }
+struct AuthorModel:Decodable {
+    let id: Int
+    let name: String
+    let album: [AlbumModel]?
+    let song: [SongModel]?
 }

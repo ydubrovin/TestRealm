@@ -55,7 +55,7 @@ class AutorTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "moveToAlbumViewController"{
             let destinationVC  = segue.destination as! AulbomTableViewController
-            destinationVC.Autorid = self.Authorid
+            destinationVC.Authorid = self.Authorid
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

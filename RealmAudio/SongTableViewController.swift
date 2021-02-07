@@ -24,7 +24,7 @@ class SongTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let buf = realm.objects(Albom.self).filter("id == \(self.Albomid)")
+        let buf = realm.objects(Album.self).filter("id == \(self.Albomid)")
         return buf[0].songs.count
     }
 
@@ -32,7 +32,7 @@ class SongTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongCell", for: indexPath)
 
-        let buf = realm.objects(Albom.self).filter("id == \(self.Albomid)")
+        let buf = realm.objects(Album.self).filter("id == \(self.Albomid)")
         print(buf[0].songs)
         cell.textLabel?.text = buf[0].songs[indexPath.row].name
 

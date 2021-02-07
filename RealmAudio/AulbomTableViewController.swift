@@ -10,15 +10,15 @@ import RealmSwift
 
 class AulbomTableViewController: UITableViewController {
     let realm = try! Realm()
-    var Autorid: Int = 1
+    var Authorid: Int = 1
     let dataBaseManager = DBManagerRealm()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let buf = realm.objects(Autor.self).filter("id == \(self.Autorid)")
+        let buf = realm.objects(Author.self).filter("id == \(self.Authorid)")
         for i in buf[0].alboms{
             print(i)
         }
-        print(Autorid)
+        print(Authorid)
     }
 
     // MARK: - Table view data source
@@ -26,7 +26,7 @@ class AulbomTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let buf = realm.objects(Autor.self).filter("id == \(self.Autorid)")
+        let buf = realm.objects(Author.self).filter("id == \(self.Authorid)")
         return buf[0].alboms.count
     }
 
@@ -34,7 +34,7 @@ class AulbomTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AulbomCell", for: indexPath)
 
-        let buf = realm.objects(Autor.self).filter("id == \(self.Autorid)")
+        let buf = realm.objects(Author.self).filter("id == \(self.Authorid)")
         cell.textLabel?.text = buf[0].alboms[indexPath.row].name
         return cell
     }
@@ -42,11 +42,11 @@ class AulbomTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "moveToSongViewController"{
             let destinationVC  = segue.destination as! SongTableViewController
-            destinationVC.Albomid = self.Autorid
+            destinationVC.Albomid = self.Authorid
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.Autorid = indexPath.row
+        self.Authorid = indexPath.row
         self.performSegue(withIdentifier: "moveToSongViewController", sender: self)
     }
 }
