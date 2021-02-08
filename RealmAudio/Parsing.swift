@@ -14,10 +14,10 @@ struct Stat:Decodable {
 
 
 
-struct MyJson{
+struct MockJson{
     
     // MARK: - json2
-    let json2 = """
+    let mockJsonAuthorsList = """
     {
       "stat": "ok",
       "author": [

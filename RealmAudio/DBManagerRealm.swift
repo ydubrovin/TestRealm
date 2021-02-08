@@ -13,10 +13,10 @@ class DBManagerRealm: NSObject{
     
     override required init(){
         super.init()
-        self.fileExists()
+        self.getDatabaseOrCreateNew()
     }
     
-    func fileExists(){
+    func getDatabaseOrCreateNew(){
         let path = Realm.Configuration.defaultConfiguration.fileURL?.path
         let fileManager = FileManager.default
         if fileManager.fileExists(atPath: path!){
@@ -351,8 +351,8 @@ class DBManagerRealm: NSObject{
     
     func parsing(){
         let statbuf: Stat
-        let json = MyJson()
-        let inputData = json.json2.data(using: .utf8)!
+        let json = MockJson()
+        let inputData = json.mockJsonAuthorsList.data(using: .utf8)!
         let decoder = JSONDecoder()
         statbuf = try! decoder.decode(Stat.self, from: inputData)
         print(statbuf.author)
