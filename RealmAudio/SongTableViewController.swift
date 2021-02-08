@@ -10,6 +10,7 @@ import RealmSwift
 
 class SongTableViewController: UITableViewController {
     var Albomid = 0
+    let dataBaseManager = DBManagerRealm()
     
     let realm = try! Realm()
 
@@ -23,9 +24,8 @@ class SongTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        let buf = realm.objects(Album.self).filter("id == \(self.Albomid)")
-        return buf[0].songs.count
+        let songAlbum = dataBaseManager.getSongAlbum(id: self.Albomid)
+        return songAlbum.count
     }
 
     
@@ -34,18 +34,9 @@ class SongTableViewController: UITableViewController {
 
         let buf = realm.objects(Album.self).filter("id == \(self.Albomid)")
         print(buf[0].songs)
-        cell.textLabel?.text = buf[0].songs[indexPath.row].name
+        let songAlbum = dataBaseManager.getSongAlbum(id: self.Albomid)
+        cell.textLabel?.text = songAlbum[indexPath.row].name
 
         return cell
-    }
-
-    @IBAction func addSong(_ sender: Any) {
-        print("song")
-    }
-    func deleteSong(){
-        let buf = realm.objects(Song.self).filter("id == 8")
-                try! realm.write{
-                    realm.delete(buf)
-                }
     }
 }

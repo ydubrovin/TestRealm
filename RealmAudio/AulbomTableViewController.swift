@@ -14,8 +14,8 @@ class AulbomTableViewController: UITableViewController {
     let dataBaseManager = DBManagerRealm()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let buf = realm.objects(Author.self).filter("id == \(self.Authorid)")
-        for i in buf[0].alboms{
+        let author = realm.objects(Author.self).filter("id == \(self.Authorid)")
+        for i in author[0].alboms{
             print(i)
         }
         print(Authorid)
@@ -26,8 +26,8 @@ class AulbomTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        let buf = realm.objects(Author.self).filter("id == \(self.Authorid)")
-        return buf[0].alboms.count
+        let countAuthors = realm.objects(Author.self).filter("id == \(self.Authorid)")
+        return countAuthors[0].alboms.count
     }
 
     

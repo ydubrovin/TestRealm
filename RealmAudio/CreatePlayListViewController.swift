@@ -17,16 +17,15 @@ class CreatePlayListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bd = DBManagerRealm()
-        self.idPlayList = bd?.getLastIdPlayList() ?? 0
+        self.idPlayList = DBManagerRealm.sharedManager.getLastIdPlayList()
         self.idPlayList = self.idPlayList + 1
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func CreatePlayList(_ sender: Any) {
         if namePlayListTextField.text != ""{
-            let play = PlayListModel()
-            play.name = namePlayListTextField.text!
-            self.bd?.addPlayList(playList: play)
+            let playlist = PlayListModel()
+            playlist.name = namePlayListTextField.text!
+            DBManagerRealm.sharedManager.addPlayList(playList: playlist)
             print("ne pustaia")
             self.performSegue(withIdentifier: "moveToSelectSong", sender: self)
         }else{
@@ -48,15 +47,5 @@ class CreatePlayListViewController: UIViewController {
         action.addAction(okButton)
         present(action, animated: true, completion: nil)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -24,12 +24,4 @@ class CheckSongTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        print("dfsdfs")
-        // Configure the view for the selected state
-    }
-    
-    
 }
