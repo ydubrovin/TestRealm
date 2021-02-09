@@ -352,7 +352,7 @@ class DBManagerRealm: NSObject{
     func parsing(){
         let statbuf: Stat
         let json = MyJson()
-        let inputData = json.json2.data(using: .utf8)!
+        let inputData = json.json.data(using: .utf8)!
         let decoder = JSONDecoder()
         statbuf = try! decoder.decode(Stat.self, from: inputData)
         print(statbuf.author)
