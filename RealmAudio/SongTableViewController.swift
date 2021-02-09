@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 
 class SongTableViewController: UITableViewController {
-    var Albomid = 0
+    var Albomid = 1
     let dataBaseManager = DBManagerRealm()
     
     let realm = try! Realm()

@@ -12,6 +12,7 @@ class AulbomTableViewController: UITableViewController {
     let realm = try! Realm()
     var Authorid: Int = 1
     let dataBaseManager = DBManagerRealm()
+    var idAlboms = [Int]()
     override func viewDidLoad() {
         super.viewDidLoad()
         let author = realm.objects(Author.self).filter("id == \(self.Authorid)")
@@ -36,17 +37,22 @@ class AulbomTableViewController: UITableViewController {
 
         let buf = realm.objects(Author.self).filter("id == \(self.Authorid)")
         cell.textLabel?.text = buf[0].alboms[indexPath.row].name
+        let id = buf[0].alboms[indexPath.row].id
+        idAlboms.append(id)
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "moveToSongViewController"{
             let destinationVC  = segue.destination as! SongTableViewController
+            
             destinationVC.Albomid = self.Authorid
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.Authorid = indexPath.row
+        //self.Authorid = indexPath.row
+        print(idAlboms[indexPath.row])
+        self.Authorid = idAlboms[indexPath.row]
         self.performSegue(withIdentifier: "moveToSongViewController", sender: self)
     }
 }

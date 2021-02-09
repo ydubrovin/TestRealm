@@ -15,11 +15,6 @@ class CheckSongTableViewCell: UITableViewCell {
         return UINib(nibName: "SongCell", bundle: nil)
     }
     
-    func create(){
-        self.nameSong = UILabel()
-        self.checkImage = UIImageView()
-    }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
