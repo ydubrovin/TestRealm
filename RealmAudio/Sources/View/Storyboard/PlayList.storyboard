@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lXe-p7-jYE">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Play Lists View Controller-->
+        <scene sceneID="y64-sl-Fal">
+            <objects>
+                <viewController id="O3K-aS-4qX" customClass="PlayListsViewController" customModule="RealmAudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k6I-QP-0ib">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6aU-IJ-YL1">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayListCell" id="2aY-W5-wXv">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2aY-W5-wXv" id="fNI-jd-N9r">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="O3K-aS-4qX" id="dOe-KP-gxU"/>
+                                    <outlet property="delegate" destination="O3K-aS-4qX" id="zwZ-cx-T2U"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eDt-pH-pWF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eDt-pH-pWF" firstAttribute="bottom" secondItem="6aU-IJ-YL1" secondAttribute="bottom" id="R9r-0x-eMl"/>
+                            <constraint firstItem="6aU-IJ-YL1" firstAttribute="top" secondItem="eDt-pH-pWF" secondAttribute="top" id="gwo-ub-5IE"/>
+                            <constraint firstItem="6aU-IJ-YL1" firstAttribute="top" secondItem="eDt-pH-pWF" secondAttribute="top" id="hOn-iS-TJ5"/>
+                            <constraint firstItem="6aU-IJ-YL1" firstAttribute="leading" secondItem="eDt-pH-pWF" secondAttribute="leading" id="izC-Ee-QOi"/>
+                            <constraint firstItem="6aU-IJ-YL1" firstAttribute="trailing" secondItem="eDt-pH-pWF" secondAttribute="trailing" id="tNv-op-xw5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Phr-I4-jLK">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="GE1-6k-AAP">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="upp-kb-xrZ">
+                                <rect key="frame" x="219" y="7" width="140" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Добавить плейлист"/>
+                                <connections>
+                                    <action selector="CreatePlayList:" destination="O3K-aS-4qX" eventType="touchUpInside" id="1hS-4x-jvO"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="playListTableView" destination="6aU-IJ-YL1" id="6eN-5i-Ixu"/>
+                        <segue destination="3ru-NL-ONw" kind="show" identifier="moveToCreatePlayList" id="8aA-21-wyX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YDA-A1-mwG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2796" y="855.9220389805098"/>
+        </scene>
+        <!--Create Play List View Controller-->
+        <scene sceneID="E8X-BQ-fHG">
+            <objects>
+                <viewController id="3ru-NL-ONw" customClass="CreatePlayListViewController" customModule="RealmAudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qcJ-bz-TGP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="soI-Lc-Zo1">
+                                <rect key="frame" x="20" y="165" width="339" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YlN-J2-3F5">
+                                <rect key="frame" x="100" y="276" width="175" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Создать"/>
+                                <connections>
+                                    <action selector="CreatePlayList:" destination="3ru-NL-ONw" eventType="touchUpInside" id="LdW-2F-ti5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Придумайте название плейлиста" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8TK-9o-5Pu">
+                                <rect key="frame" x="54" y="85" width="267" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zIF-Sh-wRo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="obh-eD-4sy"/>
+                    <connections>
+                        <outlet property="CreatePlayListButton" destination="YlN-J2-3F5" id="B59-A4-3eq"/>
+                        <outlet property="namePlayListTextField" destination="soI-Lc-Zo1" id="RBj-Ls-Gd4"/>
+                        <outlet property="titleLable" destination="8TK-9o-5Pu" id="Uq6-QZ-D9u"/>
+                        <segue destination="Hpk-Ja-Y2z" kind="show" identifier="moveToSelectSong" id="baq-TH-f62"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvS-Ux-1b4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3733.5999999999999" y="855.9220389805098"/>
+        </scene>
+        <!--Select Song View Controller-->
+        <scene sceneID="UmS-zd-fEo">
+            <objects>
+                <viewController id="Hpk-Ja-Y2z" customClass="SelectSongViewController" customModule="RealmAudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EkN-4n-CCU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Aft-wN-tue">
+                                <rect key="frame" x="0.0" y="44" width="375" height="536"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="XKm-Bh-umE" customClass="CheckSongTableViewCell" customModule="RealmAudio" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XKm-Bh-umE" id="teN-p3-gJz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Hpk-Ja-Y2z" id="cRd-yf-8fq"/>
+                                    <outlet property="delegate" destination="Hpk-Ja-Y2z" id="jtA-F1-Bwl"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ML6-ji-ZGX">
+                                <rect key="frame" x="0.0" y="588" width="375" height="30"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSong:" destination="Hpk-Ja-Y2z" eventType="touchUpInside" id="7KT-Y7-lh4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tUN-z9-9d6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tUN-z9-9d6" firstAttribute="trailing" secondItem="ML6-ji-ZGX" secondAttribute="trailing" id="Cge-UA-HSX"/>
+                            <constraint firstItem="ML6-ji-ZGX" firstAttribute="top" secondItem="Aft-wN-tue" secondAttribute="bottom" constant="10" id="FsH-4a-RXf"/>
+                            <constraint firstItem="Aft-wN-tue" firstAttribute="leading" secondItem="tUN-z9-9d6" secondAttribute="leading" id="R3L-I1-9xk"/>
+                            <constraint firstItem="ML6-ji-ZGX" firstAttribute="top" secondItem="Aft-wN-tue" secondAttribute="bottom" constant="10" id="RZi-bV-dSW"/>
+                            <constraint firstItem="Aft-wN-tue" firstAttribute="top" secondItem="tUN-z9-9d6" secondAttribute="top" id="c6t-R2-dws"/>
+                            <constraint firstItem="ML6-ji-ZGX" firstAttribute="leading" secondItem="tUN-z9-9d6" secondAttribute="leading" id="ozV-6P-Gov"/>
+                            <constraint firstItem="Aft-wN-tue" firstAttribute="trailing" secondItem="tUN-z9-9d6" secondAttribute="trailing" id="qwI-4E-fz2"/>
+                            <constraint firstItem="tUN-z9-9d6" firstAttribute="bottom" secondItem="ML6-ji-ZGX" secondAttribute="bottom" id="uvB-QT-o60"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="m5R-Qp-nP6"/>
+                    <connections>
+                        <outlet property="SongTableView" destination="Aft-wN-tue" id="1di-1F-Wl9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K0H-4q-LW5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4669.6000000000004" y="855.9220389805098"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="gYD-Hn-mvh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pxC-t4-LFh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="qAU-x6-cOf"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9sl-RY-fHe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="O3K-aS-4qX" kind="relationship" relationship="rootViewController" id="0N2-hq-xL4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="osC-SC-Nfk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856.8" y="855.9220389805098"/>
+        </scene>
+        <!--Play Lists View Controller-->
+        <scene sceneID="LBU-0r-mAC">
+            <objects>
+                <viewController id="5lJ-7U-gLi" customClass="PlayListsViewController" customModule="RealmAudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PU6-1u-JEA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6z5-MI-bpZ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="574"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlayListCell" id="mAy-9G-AvF">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mAy-9G-AvF" id="y6g-eo-s5N">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5lJ-7U-gLi" id="Q6Z-X7-CAe"/>
+                                    <outlet property="delegate" destination="5lJ-7U-gLi" id="ddK-id-V0H"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KBZ-vk-Waz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KBZ-vk-Waz" firstAttribute="bottom" secondItem="6z5-MI-bpZ" secondAttribute="bottom" id="A1M-FG-yci"/>
+                            <constraint firstItem="6z5-MI-bpZ" firstAttribute="leading" secondItem="KBZ-vk-Waz" secondAttribute="leading" id="AXG-ip-PIM"/>
+                            <constraint firstItem="6z5-MI-bpZ" firstAttribute="top" secondItem="KBZ-vk-Waz" secondAttribute="top" id="WD2-FB-ovJ"/>
+                            <constraint firstItem="6z5-MI-bpZ" firstAttribute="trailing" secondItem="KBZ-vk-Waz" secondAttribute="trailing" id="q7s-3g-872"/>
+                            <constraint firstItem="6z5-MI-bpZ" firstAttribute="top" secondItem="KBZ-vk-Waz" secondAttribute="top" id="tFJ-bF-jbg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="HbK-mL-B0d">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="4N1-Yp-2if">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="L0f-Sd-tfH">
+                                <rect key="frame" x="219" y="7" width="140" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Добавить плейлист"/>
+                                <connections>
+                                    <action selector="CreatePlayList:" destination="5lJ-7U-gLi" eventType="touchUpInside" id="WGC-0D-gng"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="playListTableView" destination="6z5-MI-bpZ" id="Ghg-sI-hQ1"/>
+                        <segue destination="QyI-DY-C4N" kind="show" identifier="moveToCreatePlayList" id="eqn-7T-lwH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bmx-Df-YKV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2796" y="855.9220389805098"/>
+        </scene>
+        <!--Create Play List View Controller-->
+        <scene sceneID="gHD-ar-5aD">
+            <objects>
+                <viewController id="QyI-DY-C4N" customClass="CreatePlayListViewController" customModule="RealmAudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WXN-bb-Z20">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gMh-Rs-I36">
+                                <rect key="frame" x="20" y="165" width="339" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eTm-8Q-sIz">
+                                <rect key="frame" x="100" y="276" width="175" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Создать"/>
+                                <connections>
+                                    <action selector="CreatePlayList:" destination="QyI-DY-C4N" eventType="touchUpInside" id="fPm-fq-97E"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Придумайте название плейлиста" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q2C-58-0iV">
+                                <rect key="frame" x="54" y="85" width="267" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ex5-Qi-QKb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hos-RH-upG"/>
+                    <connections>
+                        <outlet property="CreatePlayListButton" destination="eTm-8Q-sIz" id="maX-5R-Gfh"/>
+                        <outlet property="namePlayListTextField" destination="gMh-Rs-I36" id="9Cq-6p-fvP"/>
+                        <outlet property="titleLable" destination="q2C-58-0iV" id="4Dr-0u-xsd"/>
+                        <segue destination="bnt-tR-cJB" kind="show" identifier="moveToSelectSong" id="niO-3J-l1Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIE-Sp-Yjn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3733.5999999999999" y="855.9220389805098"/>
+        </scene>
+        <!--Select Song View Controller-->
+        <scene sceneID="aOB-Dx-GXN">
+            <objects>
+                <viewController id="bnt-tR-cJB" customClass="SelectSongViewController" customModule="RealmAudio" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MH0-uj-Ofp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4bd-Hb-hMW">
+                                <rect key="frame" x="0.0" y="44" width="375" height="536"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="48F-y3-c8N" customClass="CheckSongTableViewCell" customModule="RealmAudio" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="48F-y3-c8N" id="IvF-FN-Xay">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="bnt-tR-cJB" id="mvy-Xh-baz"/>
+                                    <outlet property="delegate" destination="bnt-tR-cJB" id="ak6-tV-Gh9"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xtq-9a-KpM">
+                                <rect key="frame" x="0.0" y="588" width="375" height="30"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="addSong:" destination="bnt-tR-cJB" eventType="touchUpInside" id="8Vk-hE-PN3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Yww-hA-7Jw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4bd-Hb-hMW" firstAttribute="leading" secondItem="Yww-hA-7Jw" secondAttribute="leading" id="46c-zg-Be2"/>
+                            <constraint firstItem="Yww-hA-7Jw" firstAttribute="trailing" secondItem="Xtq-9a-KpM" secondAttribute="trailing" id="5Tu-Ck-ZsR"/>
+                            <constraint firstItem="Xtq-9a-KpM" firstAttribute="leading" secondItem="Yww-hA-7Jw" secondAttribute="leading" id="Rtw-kt-AWu"/>
+                            <constraint firstItem="Yww-hA-7Jw" firstAttribute="bottom" secondItem="Xtq-9a-KpM" secondAttribute="bottom" id="Wiw-bn-gGp"/>
+                            <constraint firstItem="4bd-Hb-hMW" firstAttribute="top" secondItem="Yww-hA-7Jw" secondAttribute="top" id="XWw-bv-YYe"/>
+                            <constraint firstItem="Xtq-9a-KpM" firstAttribute="top" secondItem="4bd-Hb-hMW" secondAttribute="bottom" constant="10" id="fh7-ue-Pn9"/>
+                            <constraint firstItem="4bd-Hb-hMW" firstAttribute="trailing" secondItem="Yww-hA-7Jw" secondAttribute="trailing" id="gbN-Uz-mGx"/>
+                            <constraint firstItem="Xtq-9a-KpM" firstAttribute="top" secondItem="4bd-Hb-hMW" secondAttribute="bottom" constant="10" id="qeU-da-R85"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ouV-nH-1AE"/>
+                    <connections>
+                        <outlet property="SongTableView" destination="4bd-Hb-hMW" id="1f3-vO-lHX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Qs-mL-BZL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4669.6000000000004" y="855.9220389805098"/>
+        </scene>
+        <!--Плейлист-->
+        <scene sceneID="QiT-Oe-TjU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lXe-p7-jYE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Плейлист" id="9eZ-Au-Ji6"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0d3-fG-aBa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5lJ-7U-gLi" kind="relationship" relationship="rootViewController" id="JgI-D1-kMz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LoK-JM-TDC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856.8" y="855.9220389805098"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

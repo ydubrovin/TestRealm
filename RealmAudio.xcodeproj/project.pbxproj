@@ -35,6 +35,7 @@
 		5BF7831225D08DD100944F1E /* AuthorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7831125D08DD100944F1E /* AuthorModel.swift */; };
 		5BF7831725D08DFA00944F1E /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7831625D08DFA00944F1E /* SongModel.swift */; };
 		5BF7831C25D08E1900944F1E /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7831B25D08E1900944F1E /* AlbumModel.swift */; };
+		5BF7834625D2D70700944F1E /* PlayList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF7834525D2D70700944F1E /* PlayList.storyboard */; };
 		A64B1A8CC9B4CEF8998CD80A /* Pods_RealmAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0081862F275EA7DB1DFD03EE /* Pods_RealmAudio.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +70,6 @@
 		5B2234C925BC59780012130D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5B2234CB25BC597B0012130D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B2234CE25BC597B0012130D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5B2234D025BC597B0012130D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B2234D525BC597B0012130D /* RealmAudioTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RealmAudioTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B2234D925BC597B0012130D /* RealmAudioTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmAudioTests.swift; sourceTree = "<group>"; };
 		5B2234DB25BC597B0012130D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +92,8 @@
 		5BF7831125D08DD100944F1E /* AuthorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorModel.swift; sourceTree = "<group>"; };
 		5BF7831625D08DFA00944F1E /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
 		5BF7831B25D08E1900944F1E /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		5BF7834525D2D70700944F1E /* PlayList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayList.storyboard; sourceTree = "<group>"; };
+		5BF7839D25D2E43200944F1E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B85A6A45BE45920D45E2FB8 /* Pods-RealmAudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmAudio.debug.xcconfig"; path = "Target Support Files/Pods-RealmAudio/Pods-RealmAudio.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,16 +157,10 @@
 		5B2234C125BC59780012130D /* RealmAudio */ = {
 			isa = PBXGroup;
 			children = (
-				5BF782FF25CE86FD00944F1E /* Service */,
-				5BF7833E25D156D900944F1E /* View */,
-				5BF7830825CF2EEC00944F1E /* Model */,
-				5B2234C825BC59780012130D /* Main.storyboard */,
-				5B2234CB25BC597B0012130D /* Assets.xcassets */,
-				5B2234CD25BC597B0012130D /* LaunchScreen.storyboard */,
+				5BF7839425D2E13500944F1E /* Resources */,
+				5BF7835025D2D9CE00944F1E /* Sources */,
 				5B2234C425BC59780012130D /* SceneDelegate.swift */,
 				5B2234C225BC59780012130D /* AppDelegate.swift */,
-				5B2234D025BC597B0012130D /* Info.plist */,
-				5BF782D625CC2E0700944F1E /* Constants.swift */,
 			);
 			path = RealmAudio;
 			sourceTree = "<group>";
@@ -187,27 +183,63 @@
 			path = RealmAudioUITests;
 			sourceTree = "<group>";
 		};
-		5BF782B025C6F5BC00944F1E /* RealmObject */ = {
+		5BF7835025D2D9CE00944F1E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5B22350025BD9BED0012130D /* AuthorRealm.swift */,
-				5B22351A25BDB0FE0012130D /* AlbomRealm.swift */,
+				5BF783B825D2E9E900944F1E /* View */,
+				5BF783B525D2E94300944F1E /* Service */,
+				5BF783B225D2E82000944F1E /* Model */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		5BF7839425D2E13500944F1E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5BF7839625D2E16300944F1E /* Config */,
+				5BF7839525D2E15B00944F1E /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5BF7839525D2E15B00944F1E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5B2234CB25BC597B0012130D /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5BF7839625D2E16300944F1E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				5BF7839D25D2E43200944F1E /* Info.plist */,
+				5BF782D625CC2E0700944F1E /* Constants.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		5BF783B225D2E82000944F1E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5BF783B425D2E83C00944F1E /* Model */,
+				5BF783B325D2E82D00944F1E /* RealmObject */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5BF783B325D2E82D00944F1E /* RealmObject */ = {
+			isa = PBXGroup;
+			children = (
 				5B22351F25BDB6FC0012130D /* SongRealm.swift */,
+				5B22351A25BDB0FE0012130D /* AlbomRealm.swift */,
+				5B22350025BD9BED0012130D /* AuthorRealm.swift */,
 				5BF782DB25CC9EB400944F1E /* PlayListRealm.swift */,
 			);
-			name = RealmObject;
+			path = RealmObject;
 			sourceTree = "<group>";
 		};
-		5BF782FF25CE86FD00944F1E /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				5BF782D125CC2DD100944F1E /* RealmDBManager.swift */,
-				5B179D2525C6AB1E004B5A9D /* DBManagerRealm.swift */,
-			);
-			name = Service;
-			sourceTree = "<group>";
-		};
-		5BF7830725CF2EE100944F1E /* Model */ = {
+		5BF783B425D2E83C00944F1E /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				5BF7830925CF2F0800944F1E /* Parsing.swift */,
@@ -215,19 +247,19 @@
 				5BF7831625D08DFA00944F1E /* SongModel.swift */,
 				5BF7831125D08DD100944F1E /* AuthorModel.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		5BF7830825CF2EEC00944F1E /* Model */ = {
+		5BF783B525D2E94300944F1E /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				5BF782B025C6F5BC00944F1E /* RealmObject */,
-				5BF7830725CF2EE100944F1E /* Model */,
+				5BF782D125CC2DD100944F1E /* RealmDBManager.swift */,
+				5B179D2525C6AB1E004B5A9D /* DBManagerRealm.swift */,
 			);
-			name = Model;
+			path = Service;
 			sourceTree = "<group>";
 		};
-		5BF7833E25D156D900944F1E /* View */ = {
+		5BF783B825D2E9E900944F1E /* View */ = {
 			isa = PBXGroup;
 			children = (
 				5B2234C625BC59780012130D /* ViewController.swift */,
@@ -239,8 +271,19 @@
 				5BF782EA25CCA21C00944F1E /* SelectSongViewController.swift */,
 				5BF782F525CDEF9700944F1E /* CheckSongTableViewCell.swift */,
 				5BF782F625CDEF9700944F1E /* CheckSongTableViewCell.xib */,
+				5BF783B925D2E9F300944F1E /* Storyboard */,
 			);
-			name = View;
+			path = View;
+			sourceTree = "<group>";
+		};
+		5BF783B925D2E9F300944F1E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5B2234C825BC59780012130D /* Main.storyboard */,
+				5B2234CD25BC597B0012130D /* LaunchScreen.storyboard */,
+				5BF7834525D2D70700944F1E /* PlayList.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		88EE74A83B45BAE6BBB7D389 /* Pods */ = {
@@ -361,6 +404,7 @@
 				5B2234CC25BC597B0012130D /* Assets.xcassets in Resources */,
 				5B2234F625BC6A6A0012130D /* Podfile in Resources */,
 				5BF782F825CDEF9700944F1E /* CheckSongTableViewCell.xib in Resources */,
+				5BF7834625D2D70700944F1E /* PlayList.storyboard in Resources */,
 				5B2234CA25BC59780012130D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,6 +598,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -609,6 +655,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
+				INFOPLIST_FILE = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -627,7 +675,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5257ZRX3P4;
-				INFOPLIST_FILE = RealmAudio/Info.plist;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
+				INFOPLIST_FILE = RealmAudio/Resources/Config/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -648,7 +697,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5257ZRX3P4;
-				INFOPLIST_FILE = RealmAudio/Info.plist;
+				INFOPLIST_EXPAND_BUILD_SETTINGS = YES;
+				INFOPLIST_FILE = RealmAudio/Resources/Config/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -668,7 +718,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5257ZRX3P4;
-				INFOPLIST_FILE = RealmAudioTests/Info.plist;
+				INFOPLIST_FILE = RealmAudio/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -690,7 +740,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5257ZRX3P4;
-				INFOPLIST_FILE = RealmAudioTests/Info.plist;
+				INFOPLIST_FILE = RealmAudio/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -711,7 +761,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5257ZRX3P4;
-				INFOPLIST_FILE = RealmAudioUITests/Info.plist;
+				INFOPLIST_FILE = RealmAudio/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -731,7 +781,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5257ZRX3P4;
-				INFOPLIST_FILE = RealmAudioUITests/Info.plist;
+				INFOPLIST_FILE = RealmAudio/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
