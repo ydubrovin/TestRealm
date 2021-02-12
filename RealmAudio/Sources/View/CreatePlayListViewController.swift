@@ -17,8 +17,12 @@ class CreatePlayListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.bd = DBManagerRealm()
-        self.idPlayList = DBManagerRealm.sharedManager.getLastIdPlayList()
-        self.idPlayList = self.idPlayList + 1
+        let lastId = DBManagerRealm.sharedManager.getLastIdPlayList()
+        if lastId == nil{
+            self.idPlayList = 0
+        }else{
+            self.idPlayList = lastId! + 1
+        }
     }
     
     @IBAction func CreatePlayList(_ sender: Any) {

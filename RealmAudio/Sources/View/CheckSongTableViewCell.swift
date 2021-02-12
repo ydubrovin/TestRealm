@@ -10,6 +10,7 @@ import UIKit
 class CheckSongTableViewCell: UITableViewCell {
     @IBOutlet weak var nameSong: UILabel!
     @IBOutlet weak var checkImage: UIImageView!
+    var id = 0
     
     static func nib() -> UINib{
         return UINib(nibName: "SongCell", bundle: nil)
@@ -19,4 +20,9 @@ class CheckSongTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+    }
+    
 }

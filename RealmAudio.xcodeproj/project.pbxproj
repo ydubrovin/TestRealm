@@ -36,6 +36,8 @@
 		5BF7831725D08DFA00944F1E /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7831625D08DFA00944F1E /* SongModel.swift */; };
 		5BF7831C25D08E1900944F1E /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7831B25D08E1900944F1E /* AlbumModel.swift */; };
 		5BF7834625D2D70700944F1E /* PlayList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF7834525D2D70700944F1E /* PlayList.storyboard */; };
+		5BF783C525D5898700944F1E /* PlaylistSongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF783C425D5898700944F1E /* PlaylistSongsViewController.swift */; };
+		5BF783CA25D5DB4F00944F1E /* PlayList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF783C925D5DB4F00944F1E /* PlayList.swift */; };
 		A64B1A8CC9B4CEF8998CD80A /* Pods_RealmAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0081862F275EA7DB1DFD03EE /* Pods_RealmAudio.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +96,8 @@
 		5BF7831B25D08E1900944F1E /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
 		5BF7834525D2D70700944F1E /* PlayList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayList.storyboard; sourceTree = "<group>"; };
 		5BF7839D25D2E43200944F1E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5BF783C425D5898700944F1E /* PlaylistSongsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistSongsViewController.swift; sourceTree = "<group>"; };
+		5BF783C925D5DB4F00944F1E /* PlayList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayList.swift; sourceTree = "<group>"; };
 		7B85A6A45BE45920D45E2FB8 /* Pods-RealmAudio.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmAudio.debug.xcconfig"; path = "Target Support Files/Pods-RealmAudio/Pods-RealmAudio.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,6 +250,7 @@
 				5BF7831B25D08E1900944F1E /* AlbumModel.swift */,
 				5BF7831625D08DFA00944F1E /* SongModel.swift */,
 				5BF7831125D08DD100944F1E /* AuthorModel.swift */,
+				5BF783C925D5DB4F00944F1E /* PlayList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				5BF782E525CCA20D00944F1E /* CreatePlayListViewController.swift */,
 				5BF782EA25CCA21C00944F1E /* SelectSongViewController.swift */,
 				5BF782F525CDEF9700944F1E /* CheckSongTableViewCell.swift */,
+				5BF783C425D5898700944F1E /* PlaylistSongsViewController.swift */,
 				5BF782F625CDEF9700944F1E /* CheckSongTableViewCell.xib */,
 				5BF783B925D2E9F300944F1E /* Storyboard */,
 			);
@@ -473,12 +479,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B22352025BDB6FC0012130D /* SongRealm.swift in Sources */,
+				5BF783C525D5898700944F1E /* PlaylistSongsViewController.swift in Sources */,
 				5BF7830A25CF2F0800944F1E /* Parsing.swift in Sources */,
 				5BF7831725D08DFA00944F1E /* SongModel.swift in Sources */,
 				5B179D1825C41D49004B5A9D /* SongTableViewController.swift in Sources */,
 				5B179D1325C40AE0004B5A9D /* AulbomTableViewController.swift in Sources */,
 				5B179D2625C6AB1E004B5A9D /* DBManagerRealm.swift in Sources */,
 				5BF782E125CCA1DB00944F1E /* PlayListsViewController.swift in Sources */,
+				5BF783CA25D5DB4F00944F1E /* PlayList.swift in Sources */,
 				5B22350125BD9BED0012130D /* AuthorRealm.swift in Sources */,
 				5B2234C725BC59780012130D /* ViewController.swift in Sources */,
 				5BF782DC25CC9EB400944F1E /* PlayListRealm.swift in Sources */,

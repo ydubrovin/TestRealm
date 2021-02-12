@@ -319,20 +319,23 @@ class DBManagerRealm: NSObject{
         }
         return 0
     }
-    func getLastIdPlayList()-> Int{
+    
+    //MARK: - peredelati 
+    func getLastIdPlayList()-> Int?{
         do {
             let realm = try Realm()
             var lastId = realm.objects(PlayListModel.self).last?.id
             if lastId == nil{
-                lastId = 0
+                lastId = nil
+                return lastId
             }else{
-                lastId = lastId!
+                return lastId
             }
-            return lastId!
+            //return lastId!
         } catch let error as NSError {
             print(error)
         }
-        return 0
+        return nil
     }
     
     func addPlayListSongs(idPlayList:Int, songs:[Song]){
@@ -348,6 +351,7 @@ class DBManagerRealm: NSObject{
             print(error)
         }
     }
+    
     
     func parsing(){
         let statbuf: Stat
@@ -403,6 +407,29 @@ class DBManagerRealm: NSObject{
                 lastIdAulbom = lastIdAulbom + 1
             }
             lastIdAuthor = lastIdAuthor + 1
+        }
+    }
+    
+    func getPlayLists() -> [PlayList]? {
+        var playLists:[PlayList]?
+        var playListsRealm:Results<PlayListModel>?
+        do {
+            let realm = try Realm()
+            playListsRealm = realm.objects(PlayListModel.self)
+        } catch let error as NSError {
+            print(error)
+        }
+        print(playListsRealm?.count)
+        if playListsRealm!.count != 0 {
+            print("true")
+            playLists = [PlayList]()
+            for playListRealm in playListsRealm!{
+                playLists?.append(PlayList(id: playListRealm.id, name: playListRealm.name))
+            }
+            return playLists
+        }else{
+            print("false")
+            return nil
         }
     }
     
