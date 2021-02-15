@@ -26,7 +26,7 @@ class SelectSongViewController: UIViewController {
         nextIdPlayList()
     }
     @IBAction func addSong(_ sender: Any) {
-        if namePlayListTextField.text != ""{
+        if (namePlayListTextField.text != "") && (!self.songs!.isEmpty){
             let playlist = PlayListModel()
             playlist.name = namePlayListTextField.text!
             DBManagerRealm.sharedManager.addPlayList(playList: playlist)
@@ -44,7 +44,7 @@ class SelectSongViewController: UIViewController {
     }
     
     func createAlertController(){
-        let action = UIAlertController(title: "Ошибка", message: "Неправильное имя", preferredStyle: .actionSheet)
+        let action = UIAlertController(title: "Ошибка", message: "Неправильное имя или не выбраны песни", preferredStyle: .actionSheet)
         let okButton = UIAlertAction(title: "ok", style: .cancel, handler: nil)
         action.addAction(okButton)
         present(action, animated: true, completion: nil)

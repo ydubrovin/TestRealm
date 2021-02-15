@@ -330,6 +330,7 @@ class DBManagerRealm: NSObject{
             }else{
                 return lastId
             }
+            //return lastId!
         } catch let error as NSError {
             print(error)
         }
