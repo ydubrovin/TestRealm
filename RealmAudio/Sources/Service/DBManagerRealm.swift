@@ -342,10 +342,25 @@ class DBManagerRealm: NSObject{
         do {
             let realm = try Realm()
             let playList = realm.objects(PlayListModel.self).filter("id == \(idPlayList)")
+            print(playList)
             for song in songs{
                 try realm.write{
                     playList[0].songs.append(song)
                 }
+            }
+        } catch let error as NSError {
+            print(error)
+        }
+    }
+    
+    func addPlayListSong(idPlayList:Int, songs:Song){
+        do {
+            //конвертер моделей
+            let realm = try Realm()
+            let playList = realm.objects(PlayListModel.self).filter("id == \(idPlayList)").first
+            let songnew = realm.objects(Song.self).filter("id == \(songs.id)")
+            try realm.write{
+                playList!.songs.append(objectsIn: songnew)
             }
         } catch let error as NSError {
             print(error)
@@ -433,56 +448,31 @@ class DBManagerRealm: NSObject{
         }
     }
     
-    func createDataBase(){
-        let author = Author()
-        author.name = "1"
-        author.id = 0
-        let albom = Album()
-        albom.dateRealise = Date(timeIntervalSince1970: Date().timeIntervalSinceReferenceDate)
-        albom.name = "1.1"
-        albom.id = 0
-        let albom1 = Album()
-        albom1.dateRealise = Date(timeIntervalSince1970: Date().timeIntervalSinceReferenceDate)
-        albom1.name = "1.2"
-        albom1.id = 1
-        let song = Song()
-        song.name = "1.1.1"
-        song.id = 0
-        let song1 = Song()
-        song1.name = "1.1.2"
-        song1.id = 1
-        let song2 = Song()
-        song2.id = 2
-        song2.name = "1.1.3"
-        let song3 = Song()
-        song3.id = 3
-        song3.name = "1.1.4"
-        let song1_1 = Song()
-        song1_1.id = 4
-        song1_1.name = "1.2.1"
-        let song1_2 = Song()
-        song1_2.id = 5
-        song1_2.name = "1.2.2"
-        let song1_3 = Song()
-        song1_3.id = 6
-        song1_3.name = "1.2.3"
-        let song1_4 = Song()
-        song1_4.id = 7
-        song1_4.name = "1.2.4"
-
-//
-
-        //addAuthor(author: author)
-        //addAlbum(album: albom, author: author)
-        //addAlbum(album: albom1, author: author)
-        //addSong(author: author, album: albom, song: song)
-        //addSong(author: author, album: albom, song: song1)
-        //addSong(author: author, album: albom, song: song2)
-        //addSong(author: author, album: albom, song: song3)
-        //addSong(author: author, album: albom1, song: song1_1)
-        //addSong(author: author, album: albom1, song: song1_2)
-        //addSong(author: author, album: albom1, song: song1_3)
-        //addSong(author: author, album: albom1, song: song1_4)
-
+    func deleteSongPlayList(idPlayList: Int, idSong: Int){
+        do {
+            let realm = try Realm()
+            let playListsRealm = realm.objects(PlayListModel.self).filter("id = \(idPlayList)")
+            //let song = realm.objects(Song.self).filter("id == 2")
+            try realm.write{
+                playListsRealm[0].songs.remove(at: idSong)
+            }
+        } catch let error as NSError {
+            print(error)
+        }
+    }
+    func getAllSongs()->[SongModel]?{
+        var songs = [SongModel]()
+        do {
+            let realm = try Realm()
+            let songsRealm = realm.objects(Song.self)
+            for songRealm in songsRealm{
+                let song = SongModel(id: songRealm.id, name: songRealm.name)
+                songs.append(song)
+            }
+            return songs
+        } catch let error as NSError {
+            print(error)
+        }
+        return nil
     }
 }

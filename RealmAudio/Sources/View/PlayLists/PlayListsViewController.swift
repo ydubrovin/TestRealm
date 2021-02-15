@@ -26,7 +26,7 @@ class PlayListsViewController: UIViewController {
     }
     
     @IBAction func CreatePlayList(_ sender: Any) {
-        self.performSegue(withIdentifier: "moveToCreatePlayList", sender: self)
+        self.performSegue(withIdentifier: "playlistToCreatePlaylist", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -44,7 +44,6 @@ class PlayListsViewController: UIViewController {
 
 extension PlayListsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return DBManagerRealm.sharedManager.getCountPlayList()
         if playLists == nil{
             return 0
         }else{
@@ -54,9 +53,7 @@ extension PlayListsViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlayListCell", for: indexPath)
-
-        //let playList = DBManagerRealm.sharedManager.getPlayList(id: indexPath.row)
-        cell.textLabel?.text = self.playLists![indexPath.row].name //playList.name
+        cell.textLabel?.text = self.playLists![indexPath.row].name
 
         return cell
     }
@@ -70,7 +67,6 @@ extension PlayListsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             tableView.beginUpdates()
-            //DBManagerRealm.sharedManager.deletePlayList(id: indexPath.row)
             DBManagerRealm.sharedManager.deletePlayList(id: self.playLists![indexPath.row].id)
             self.playLists!.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)

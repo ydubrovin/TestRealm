@@ -8,6 +8,10 @@
 import UIKit
 
 class SelectSongViewController: UIViewController {
+    
+    
+    @IBOutlet weak var namePlayListLable: UILabel!
+    @IBOutlet weak var namePlayListTextField: UITextField!
     @IBOutlet weak var songTableView: UITableView!
     var songs: [Song]?
     var idPlayList: Int = 0
@@ -19,10 +23,18 @@ class SelectSongViewController: UIViewController {
         songTableView.register(UINib(nibName: "CheckSongTableViewCell", bundle: nil), forCellReuseIdentifier: "SongCells")
         self.songs = [Song]()
         self.selectIds = [Int]()
+        nextIdPlayList()
     }
     @IBAction func addSong(_ sender: Any) {
-        DBManagerRealm.sharedManager.addPlayListSongs(idPlayList: self.idPlayList, songs: self.songs!)
-        performSegue(withIdentifier: "SelectSongToPlaylist", sender: self)
+        if namePlayListTextField.text != ""{
+            let playlist = PlayListModel()
+            playlist.name = namePlayListTextField.text!
+            DBManagerRealm.sharedManager.addPlayList(playList: playlist)
+            DBManagerRealm.sharedManager.addPlayListSongs(idPlayList: self.idPlayList, songs: self.songs!)
+            performSegue(withIdentifier: "SelectSongToPlaylist", sender: self)
+        }else{
+            createAlertController()
+        }
 
     }
     
@@ -31,15 +43,27 @@ class SelectSongViewController: UIViewController {
         }
     }
     
-    @IBAction func goToBack(_ sender: Any) {
-        let i = 1
-        if i == 1{
-            navigationController?.popViewController(animated: false)
-            print(false)
+    func createAlertController(){
+        let action = UIAlertController(title: "Ошибка", message: "Неправильное имя", preferredStyle: .actionSheet)
+        let okButton = UIAlertAction(title: "ok", style: .cancel, handler: nil)
+        action.addAction(okButton)
+        present(action, animated: true, completion: nil)
+    }
+    func nextIdPlayList(){
+        let lastId = DBManagerRealm.sharedManager.getLastIdPlayList()
+        if lastId == nil{
+            self.idPlayList = 0
+        }else{
+            self.idPlayList = lastId! + 1
         }
     }
+
     
 }
+
+// MARK: - Table view data source and delegate
+
+
 extension SelectSongViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return DBManagerRealm.sharedManager.getContSong()
@@ -47,7 +71,6 @@ extension SelectSongViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SongCells", for: indexPath) as! CheckSongTableViewCell
-        let namesong = DBManagerRealm.sharedManager.getSong(id: indexPath.row).name
         cell.nameSong.text = DBManagerRealm.sharedManager.getSong(id: indexPath.row).name
         cell.checkImage.isHidden = true
         cell.tag = 0
@@ -58,7 +81,6 @@ extension SelectSongViewController: UITableViewDelegate, UITableViewDataSource{
             print(indexPath.row)
             for id in self.selectIds!{
                 if id == indexPath.row{
-                    print("true")
                     cell.checkImage.isHidden = false
                 }else{
                 }
@@ -93,8 +115,7 @@ extension SelectSongViewController: UITableViewDelegate, UITableViewDataSource{
             self.selectIds?.remove(at: idsDelete)
             cell.tag = 0
         }
-        print(self.selectIds)
     }
-    
+        
     
 }
