@@ -320,7 +320,6 @@ class DBManagerRealm: NSObject{
         return 0
     }
     
-    //MARK: - peredelati 
     func getLastIdPlayList()-> Int?{
         do {
             let realm = try Realm()
@@ -331,7 +330,6 @@ class DBManagerRealm: NSObject{
             }else{
                 return lastId
             }
-            //return lastId!
         } catch let error as NSError {
             print(error)
         }
